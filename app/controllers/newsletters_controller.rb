@@ -28,7 +28,7 @@ class NewslettersController < ApplicationController
 
 	def destroy
 		@newsletter.destroy
-		redirect_to 'newsletters'
+		redirect_to '/newsletters'
 	end
 
 	private
