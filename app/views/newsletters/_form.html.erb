@@ -1,14 +1,14 @@
 <%= form_for(newsletter) do |f| %>
-	<%= f.label :gct_id %>
+	<%= f.label :gct_id, 'GCT' %>
 	<%= f.text_field :gct_id %>
 
-	<%= f.label :adv_id %>
+	<%= f.label :adv_id, 'Advertiser ID' %>
 	<%= f.text_field :adv_id %>
 
-	<%= f.label :adv_name %>
+	<%= f.label :adv_name, 'Advertiser Name' %>
 	<%= f.text_field :adv_name %>
 
-	<%= f.label :send_date %>
+	<%= f.label :send_date, 'Send Date' %>
 	<%= f.date_select :send_date %>
 
 	<%= f.submit%>
