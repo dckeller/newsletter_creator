@@ -1,9 +1,4 @@
-<h1>Create Newsletter!</h1>
-
-<<<<<<< HEAD
-<%= render 'form', newsletter: @newsletter %>
-=======
-<%= form_for(@newsletter) do |f| %>
+<%= form_for(newsletter) do |f| %>
 	<%= f.label :gct_id %>
 	<%= f.text_field :gct_id %>
 
@@ -16,7 +11,5 @@
 	<%= f.label :send_date %>
 	<%= f.date_select :send_date %>
 
-	<%=f.submit %>
-
+	<%= f.submit%>
 <% end %>
->>>>>>> ebb8eb44b58df0c5a0601e1784c1d1a4a29a7b83

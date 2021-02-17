@@ -4,5 +4,7 @@
 	<%= letter.gct_id %><br/>
 	<%= letter.adv_name %><br/>
 	<%= letter.adv_id %><br/>
+	<%= link_to 'Edit', edit_newsletter_path(letter) %>
+	<%= link_to 'Delete', letter, method: :delete %>
 	<br/>
 <% end %>	
