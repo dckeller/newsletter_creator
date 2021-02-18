@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_17_182041) do
+ActiveRecord::Schema.define(version: 2021_02_18_205702) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "headers", force: :cascade do |t|
+    t.datetime "date"
+    t.string "header_image"
+    t.string "subject_line"
+    t.text "body"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "newsletters", force: :cascade do |t|
     t.string "gct_id"
