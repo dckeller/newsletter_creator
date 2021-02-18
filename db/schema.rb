@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2021_02_17_182041) do
     t.datetime "send_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "closed"
+    t.boolean "closed", default: false
   end
 
 end
