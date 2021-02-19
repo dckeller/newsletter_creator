@@ -1,3 +1,3 @@
 class Newsletter < ApplicationRecord
-	has_many :headers
+	has_one :header
 end

@@ -15,7 +15,7 @@ class NewslettersController < ApplicationController
 	def create
 		@newsletter = Newsletter.new(newsletter_params)
 		@newsletter.save
-		redirect_to newsletters_path
+		redirect_to new_newsletter_header_path(@newsletter)
 	end
 
 	def edit
