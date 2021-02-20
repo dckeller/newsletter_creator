@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   get 'close/:id', to: 'newsletters#close', as: 'close'
   get 'open/:id', to: 'newsletters#open', as: 'open' 
   
-  root 'newsletters#index'
+  root to: 'newsletters#index'
 end

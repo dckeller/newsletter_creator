@@ -6,6 +6,7 @@ class HeadersController < ApplicationController
 	end
 
 	def show
+		@newsletter = Newsletter.find(params[:newsletter_id])
 	end 
 
 	def new
@@ -17,7 +18,7 @@ class HeadersController < ApplicationController
 		@newsletter = Newsletter.find(params[:newsletter_id])
 		@header = @newsletter.create_header(header_params)
 		@header.save
-		redirect_to newsletters_path
+		redirect_to newsletter_header_path(@newsletter, @header)
 	end
 
 	def edit
