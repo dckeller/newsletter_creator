@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
@@ -109,7 +110,7 @@ div[style*="margin: 16px 0;"] {
         
         <td valign="top" align="left" style="font-family: Helvetica,sans-serif; font-size:15px; color:#000000; padding:20px">Hello [FIRST.NAME],<br/>
             <br/>
- <%= simple_format(@header.body_copy) %> 
+ <%= @header.body_copy.gsub(/\n/, '<br/>').html_safe %> 
 <br /><br />
 There are text links below to help you promote these exciting new offers!
 
