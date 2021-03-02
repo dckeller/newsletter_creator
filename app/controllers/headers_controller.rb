@@ -17,21 +17,27 @@ class HeadersController < ApplicationController
 	def create
 		@newsletter = Newsletter.find(params[:newsletter_id])
 		@header = @newsletter.create_header(header_params)
-		@header.save
-		redirect_to newsletter_header_path(@newsletter, @header)
+		if @header.save
+			flash[:notice] = "Your Header was Created"
+			redirect_to newsletter_header_path(@newsletter, @header)
+		else
+			render 'new'
+		end
 	end
 
 	def edit
+		@newsletter = Newsletter.find(params[:newsletter_id])
 	end
 
 	def update
+		@newsletter = Newsletter.find(params[:newsletter_id])
 		@header.update(header_params)
-		redirect_to headers_path
+		redirect_to newsletter_header_path(@newsletter, @header)
 	end
 
 	def destroy
 		@header.destroy
-		redirect_to headers_path
+		redirect_to newsletters_path
 	end
 
 	private

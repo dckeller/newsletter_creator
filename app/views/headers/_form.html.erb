@@ -1,15 +1,24 @@
 <%= form_for [@newsletter, @header] do |f| %>
+
+<div class="form-group w-50">
 	<%= f.label :date, 'Month & Year' %>
 	<%= f.date_select(:date, options = {discard_day: true}) %>
+</div>
 
+<div class="form-group w-50">
 	<%= f.label :header_image, 'Image URL' %>
-	<%= f.text_field :header_image %>
+	<%= f.text_field :header_image, :class => 'form-control' %>
+</div>
 
+<div class="form-group w-50">
 	<%= f.label :subject_line, 'Subject Line' %>
-	<%= f.text_field :subject_line %>
+	<%= f.text_field :subject_line, :class => 'form-control' %>
+</div>
 
+<div class="form-group w-50">
 	<%= f.label :body_copy, 'Body Copy' %>
-	<%= f.text_area :body_copy %>
+	<%= f.text_area :body_copy, :class => 'form-control' %>
+</div>
 
 	<%= f.submit%>
 <% end %>

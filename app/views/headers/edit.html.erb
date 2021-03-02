@@ -1,4 +1,4 @@
-<h2>Newsletter Header</h2>
+<h1>Edit Newsletter Data</h1>
 <span class="text-muted">Let's start by filling out the basic header information for the newsletter.  For the body copy you can copy and paste into the field, or format exactly how you'd like it to look in the newsletter.<br/>Next we'll fill in the text link information.</span><br/>
 <br/>
 <h4>Ticket Details</h4>
@@ -7,5 +7,5 @@
 <li>MID: <%= @newsletter.adv_id %></li>
 <li> Advertiser Name: <%= @newsletter.adv_name %></li>
 </ul>
-This ticket is to be sent out on: <%= @newsletter.send_date.strftime("%Y-%m-%d") %><br/><br/>
-<%= render 'form', newsletter: @newsletter, header: @header %><br/>
+
+<%= render 'form', header: @header %>

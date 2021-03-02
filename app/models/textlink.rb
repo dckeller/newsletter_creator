@@ -1,0 +1,2 @@
+class Textlink < ApplicationRecord
+end

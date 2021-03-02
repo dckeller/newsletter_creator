@@ -1,4 +1,5 @@
 class NewslettersController < ApplicationController
+	# before_action :set_header, only: [:index]
 	before_action :set_newsletter, only: [:show, :edit, :close, :open, :update, :destroy]
 
 	def index
@@ -49,5 +50,9 @@ class NewslettersController < ApplicationController
 
 		def set_newsletter
 			@newsletter = Newsletter.find(params[:id])
-		end      
+		end
+
+		# def set_header
+		# 	@header = @newsletter.header.find(params[:newsletter_id])
+		# end     
 end

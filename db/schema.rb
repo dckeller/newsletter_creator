@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_18_214848) do
+ActiveRecord::Schema.define(version: 2021_03_02_201204) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,15 @@ ActiveRecord::Schema.define(version: 2021_02_18_214848) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "closed", default: false
+    t.integer "textlink_id"
+    t.index ["textlink_id"], name: "index_newsletters_on_textlink_id"
+  end
+
+  create_table "textlinks", force: :cascade do |t|
+    t.string "text"
+    t.string "link_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "headers", "newsletters"

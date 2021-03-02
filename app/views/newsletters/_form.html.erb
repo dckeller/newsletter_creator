@@ -1,15 +1,26 @@
 <%= form_for(newsletter) do |f| %>
+
+<div class="form-group w-50">
 	<%= f.label :gct_id, 'GCT' %>
-	<%= f.text_field :gct_id %>
+	<%= f.text_field :gct_id, :class => 'form-control' %>
+</div>
+<div class="form-group w-50">
 
 	<%= f.label :adv_id, 'Advertiser ID' %>
-	<%= f.text_field :adv_id %>
+	<%= f.text_field :adv_id, :class => 'form-control' %>
+</div>
+
+<div class="form-group w-50">
 
 	<%= f.label :adv_name, 'Advertiser Name' %>
-	<%= f.text_field :adv_name %>
+	<%= f.text_field :adv_name, :class => 'form-control' %>
+</div>
+
+<div class="form-group w-50">
 
 	<%= f.label :send_date, 'Send Date' %>
 	<%= f.date_select :send_date %>
+</div>
 
-	<%= f.submit%>
+	<%= f.submit 'Submit', :class => 'btn btn-primary' %>
 <% end %>

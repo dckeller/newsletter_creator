@@ -1,0 +1,2 @@
+class TextlinksController < ApplicationController
+end

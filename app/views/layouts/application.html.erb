@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>&#9791; Mercury</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>&#9791; Mercury</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= link_to 'New Newsletter', new_newsletter_path %>
-    <%= link_to 'Home', newsletters_path %>
+<body style="margin: 15px">
 
-    <%= yield %>
-  </body>
+
+  <ul class="nav nav-pills">
+    <li class="nav-item"><%= link_to 'New Newsletter', new_newsletter_path, class: "nav-link active" %>  </li>
+    <li class="nav-item"><%= link_to 'Home', newsletters_path, class: "nav-link" %></li>
+    <li class="nav-item"><%= link_to 'Contact', newsletters_path, class: "nav-link" %></li>
+  </ul>
+
+  <%= yield %>
+</body>
 </html>
