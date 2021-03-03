@@ -1,0 +1,14 @@
+<%= form_for [@newsletter, textlink] do |f| %>
+
+<div class="form-group w-50">
+	<%= f.label :link_id, 'Text Link ID#' %>
+	<%= f.text_field :link_id, :class => 'form-control' %>
+</div>
+
+<div class="form-group w-50">
+	<%= f.label :copy, 'Copy' %>
+	<%= f.text_field :copy, :class => 'form-control' %>
+</div>
+
+	<%= f.submit%>
+<% end %>

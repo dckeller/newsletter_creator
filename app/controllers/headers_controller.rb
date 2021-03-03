@@ -17,12 +17,8 @@ class HeadersController < ApplicationController
 	def create
 		@newsletter = Newsletter.find(params[:newsletter_id])
 		@header = @newsletter.create_header(header_params)
-		if @header.save
-			flash[:notice] = "Your Header was Created"
-			redirect_to newsletter_header_path(@newsletter, @header)
-		else
-			render 'new'
-		end
+		@header.save
+		redirect_to newsletter_path(@newsletter)
 	end
 
 	def edit

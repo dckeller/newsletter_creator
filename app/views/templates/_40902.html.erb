@@ -98,19 +98,19 @@ div[style*="margin: 16px 0;"] {
         
         <!--	BEGIN HEADER IMAGE-->
         <tr>
-          <td align="center" ><img style="display: block" class="mainBanner" src="<%= @header.header_image %>" width="600" height="200" alt="Header Image"/></td>
+          <td align="center" ><img style="display: block" class="mainBanner" src="<%= @newsletter.header.header_image %>" width="600" height="200" alt="Header Image"/></td>
         </tr>
         <!--	END HEADER IMAGE-->
         
         <tr>
-          <td align="center" style="padding-top:20px; padding-bottom: 30px; background-color:#373A3C;"><span class="contact" style="font-size: 20px; font-family: Georgia, &quot;Times New Roman&quot;, Courier; color:#fff;"><strong><%= @header.subject_line %></strong></span> <br /></td>
+          <td align="center" style="padding-top:20px; padding-bottom: 30px; background-color:#373A3C;"><span class="contact" style="font-size: 20px; font-family: Georgia, &quot;Times New Roman&quot;, Courier; color:#fff;"><strong><%= @newsletter.header.subject_line %></strong></span> <br /></td>
         </tr>
         
         <!--		Begin Main Copy-->
         
         <td valign="top" align="left" style="font-family: Helvetica,sans-serif; font-size:15px; color:#000000; padding:20px">Hello [FIRST.NAME],<br/>
             <br/>
- <%= @header.body_copy.gsub(/\n/, '<br/>').html_safe %> 
+ <%= @newsletter.header.body_copy.gsub(/\n/, '<br/>').html_safe %> 
 <br /><br />
 There are text links below to help you promote these exciting new offers!
 
@@ -120,6 +120,18 @@ There are text links below to help you promote these exciting new offers!
             <a style="color: #7D1222; font-size:12px;" href="mailto:ls-katvond@linkshare.com"><strong>ls-katvond@linkshare.com</strong></a></td>
           <!--		End Main Copy--> 
           
+                  <!--    Begin Text Links-->
+        <tr>
+          <td align="center" style="padding-top:20px; background-color:#373A3C;"><span class="contact" style="font-size: 18px; font-family: Georgia, Times New Roman, Courier; color:#fff;"><strong>Text Link</strong></span> <br />
+            <br /></td>
+        </tr>
+
+
+
+        <% @newsletter.textlinks.each do |l| %>
+          <%= render "/link_templates/#{@newsletter.adv_id}", copy: l.copy, link_id: l.link_id %>
+        <% end %>
+
        
         
       </table></td>
