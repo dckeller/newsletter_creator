@@ -9,7 +9,7 @@ class TextlinksController < ApplicationController
 	def create
 		@textlink = @newsletter.textlinks.build(textlink_params)
 		@textlink.save
-		redirect_to newsletter_path(@newsletter)
+		redirect_to @newsletter
 	end
 
 	def edit

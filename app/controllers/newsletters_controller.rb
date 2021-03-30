@@ -3,10 +3,11 @@ class NewslettersController < ApplicationController
 	before_action :set_newsletter, only: [:show, :edit, :close, :open, :update, :destroy]
 
 	def index
-		@newsletters = Newsletter.all
+		@newsletters = Newsletter.search(params[:search])
 	end
 
 	def show
+		@header = Header.new
 	end 
 
 	def new

@@ -1,6 +1,9 @@
-<%= render "/templates/#{@newsletter.adv_id}" %>
-<br/><br/>
-<h2>Add a Text Link</h2>
-<%= render partial: "textlinks/form", locals: {textlink: @newsletter.textlinks.new} %>
+
+
+		<%= render partial: "templates/#{@newsletter.adv_id}", newsletter: @newsletter, header: @newsletter.header %><br/>
+		<br/>
+		<h2>Add a Text Link</h2>
+		<%= render partial: "textlinks/form", locals: {textlink: @newsletter.textlinks.new} %><br/>
+		<br/>
 
 <a href="#{download}" download>Click here to download</a>

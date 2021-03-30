@@ -5,7 +5,7 @@
 <div class="row">
 <% @newsletters.each do |letter| %>
 <% if letter.closed === false %>
-	<div class="col-sm-2.5">
+	<div class="col-sm-2.5" style="margin-left: 10px">
 		<div class="card" align="center">
 			<div class="card-body">
 				<% if letter.header %>

@@ -18,6 +18,10 @@
     <li class="nav-item"><%= link_to 'New Newsletter', new_newsletter_path, class: "nav-link active" %>  </li>
     <li class="nav-item"><%= link_to 'Home', newsletters_path, class: "nav-link" %></li>
     <li class="nav-item"><%= link_to 'Contact', newsletters_path, class: "nav-link" %></li>
+    <li class="nav-item"><%= form_with(url: '/newsletters', method: 'get', local: true) do %>
+                          <%= text_field_tag(:search) %>
+                          <%= submit_tag("Search", class: "btn btn-primary") %>
+                        <% end %></li>
   </ul>
 
   <%= yield %>
