@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   resources :newsletters do 
   		resources :headers
   		resources :textlinks
+  		resources :bannersets do
+  			resources :sizes
+  		end 
   end 
 
   get 'close/:id', to: 'newsletters#close', as: 'close'

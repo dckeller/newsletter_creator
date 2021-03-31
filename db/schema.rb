@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_02_213553) do
+ActiveRecord::Schema.define(version: 2021_03_31_000056) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bannersets", force: :cascade do |t|
+    t.string "display_img"
+    t.bigint "newsletter_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["newsletter_id"], name: "index_bannersets_on_newsletter_id"
+  end
 
   create_table "headers", force: :cascade do |t|
     t.datetime "date"
@@ -36,6 +44,15 @@ ActiveRecord::Schema.define(version: 2021_03_02_213553) do
     t.boolean "closed", default: false
   end
 
+  create_table "sizes", force: :cascade do |t|
+    t.string "banner_id"
+    t.string "banner_size"
+    t.bigint "bannerset_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["bannerset_id"], name: "index_sizes_on_bannerset_id"
+  end
+
   create_table "textlinks", force: :cascade do |t|
     t.string "link_id"
     t.string "copy"
@@ -45,6 +62,8 @@ ActiveRecord::Schema.define(version: 2021_03_02_213553) do
     t.index ["newsletter_id"], name: "index_textlinks_on_newsletter_id"
   end
 
+  add_foreign_key "bannersets", "newsletters"
   add_foreign_key "headers", "newsletters"
+  add_foreign_key "sizes", "bannersets"
   add_foreign_key "textlinks", "newsletters"
 end

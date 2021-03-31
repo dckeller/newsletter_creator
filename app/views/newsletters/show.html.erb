@@ -1,9 +1,20 @@
-
+<h2>Create Newsletter Additions</h2>
+<span class="text-muted">Let's start by filling out the textlinks and banners for the newsletter.</span><br/>
+<br/>
+<h4>Ticket Details</h4>
+<ul class="list-unstyled">
+<li >GCT: <%= @newsletter.gct_id %></li>
+<li>MID: <%= @newsletter.adv_id %></li>
+<li> Advertiser Name: <%= @newsletter.adv_name %></li>
+</ul>
 
 		<%= render partial: "templates/#{@newsletter.adv_id}", newsletter: @newsletter, header: @newsletter.header %><br/>
 		<br/>
 		<h2>Add a Text Link</h2>
 		<%= render partial: "textlinks/form", locals: {textlink: @newsletter.textlinks.new} %><br/>
+		<br/>
+		<h2>Add a Banner Set</h2>
+		<%= render partial: "bannersets/form", locals: {bannerset: @newsletter.bannersets.new} %><br/>
 		<br/>
 
 <a href="#{download}" download>Click here to download</a>

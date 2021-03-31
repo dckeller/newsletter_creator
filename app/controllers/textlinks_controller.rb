@@ -31,15 +31,15 @@ class TextlinksController < ApplicationController
 
 	private
 
-	def textlink_params
-		params.require(:textlink).permit(:link_id, :copy, :newsletter_id)
-	end 
+		def textlink_params
+			params.require(:textlink).permit(:link_id, :copy, :newsletter_id)
+		end 
 
-	def get_newsletter
-		@newsletter = Newsletter.find(params[:newsletter_id])
-	end
+		def get_newsletter
+			@newsletter = Newsletter.find(params[:newsletter_id])
+		end
 
-	def set_textlink
-		@textlink = @newsletter.textlinks.find(params[:id])
-	end   
+		def set_textlink
+			@textlink = @newsletter.textlinks.find(params[:id])
+		end   
 end

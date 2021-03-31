@@ -1,0 +1,9 @@
+<%= form_for [@newsletter, bannerset] do |f| %>
+
+<div class="form-group w-50">
+	<%= f.label :display_img, 'Banner To Display' %>
+	<%= f.text_field :display_img, :class => 'form-control' %>
+</div>
+
+	<%= f.submit%>
+<% end %>
